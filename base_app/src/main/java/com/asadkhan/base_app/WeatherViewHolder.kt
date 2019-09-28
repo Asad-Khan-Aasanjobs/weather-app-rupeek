@@ -39,7 +39,7 @@ open class WeatherViewHolder(
 
   private fun bindPokemonDetailsAsync(newData: WeatherDataPoint?) {
     newData?.let {
-      itemView.tv_date.text = Date(it.time).toString()
+      itemView.tv_date.text = Date(it.time * 1000).toString()
       itemView.tv_rain.text = "${it.rain}%"
       itemView.tv_temperature.text = "${it.temp} °C"
       itemView.tv_wind.text = "${it.wind} km/hr"
