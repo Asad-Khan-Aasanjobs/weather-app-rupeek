@@ -1,1 +1,1 @@
-# base-app-template
+# Android App assignment
