@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config >
+  <!-- allow cleartext traffic for IPs in debug -->
+  <domain-config cleartextTrafficPermitted="true" >
+    <!--<domain includeSubdomains="true" >api.aasaanjobs.com</domain >-->
+    <domain includeSubdomains="true" >www.mocky.io</domain >
+    <domain includeSubdomains="true" >api2.aasaanjobs.net</domain >
+    <domain includeSubdomains="true" >api3.aasaanjobs.net</domain >
+    
+    <!--<domain includeSubdomains="true" >www.aasaanjobs.com</domain >-->
+    <domain includeSubdomains="true" >beta2.aasaanjobs.net</domain >
+    <domain includeSubdomains="true" >beta3.aasaanjobs.net</domain >
+  
+  </domain-config >
+</network-security-config >

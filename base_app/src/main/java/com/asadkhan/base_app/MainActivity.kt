@@ -3,7 +3,7 @@ package com.asadkhan.base_app
 import android.app.Activity
 import android.os.Bundle
 import android.os.Handler
-import com.asadkhan.global.Constants
+import com.asadkhan.global_module.Constants
 import kotlinx.android.synthetic.main.activity_main.tv_hello_world
 
 class MainActivity : Activity() {

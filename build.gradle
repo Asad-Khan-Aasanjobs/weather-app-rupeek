@@ -16,11 +16,11 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath "${android_plugin}:3.3.2"
-    classpath "${google_services}:4.2.0"
+    //classpath "${google_services}:4.2.0"
+    classpath "${android_plugin}:3.0.0"
     classpath "$kotlin-gradle-plugin:${kotlin_version}"
     classpath "$kotlin-android-extensions:${kotlin_version}"
-    classpath "${fabric}:1.28.1"
+    //classpath "${fabric}:1.28.1"
 
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files

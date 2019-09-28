@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   tools:showIn="@layout/activity_weather_list"
+                                                   tools:context=".WeatherListFragment" >
+  
+  <LinearLayout
+      android:id="@+id/ll_latlong"
+      android:layout_width="match_parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toTopOf="@id/srl_swipe_refresh"
+      android:gravity="center"
+      android:layout_height="wrap_content" >
+    
+    <TextView
+        android:id="@+id/tv_lat_long"
+        android:gravity="center"
+        android:text="Lat:13.1845 Long:77.4792"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+  
+  </LinearLayout >
+  
+  
+  <android.support.v4.widget.SwipeRefreshLayout
+      android:id="@+id/srl_swipe_refresh"
+      android:animateLayoutChanges="true"
+      android:background="#dddddd"
+      android:layout_marginTop="36dp"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent" >
+    
+    <FrameLayout
+        android:id="@+id/content"
+        android:animateLayoutChanges="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+      
+      
+      <LinearLayout
+          android:id="@+id/data"
+          android:animateLayoutChanges="true"
+          android:paddingStart="2dp"
+          android:paddingEnd="2dp"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical" >
+        
+        
+        
+        <android.support.v7.widget.RecyclerView
+          android:id="@+id/rv_pokemon_list"
+          android:fastScrollEnabled="true"
+          tools:listitem="@layout/weather_row_list"
+          tools:spanCount="1"
+          android:layoutAnimation="@anim/items_roll_down"
+          android:scrollbars="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+        
+        <LinearLayout
+            android:id="@+id/list_loading"
+            android:animateLayoutChanges="true"
+            android:elevation="4dp"
+            android:visibility="gone"
+            android:background="@color/colorAccentTranslucent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_gravity="bottom"
+            android:layout_height="48dp" />
+        
+        
+        <TextView
+            android:id="@+id/tv_list_loading"
+            android:animateLayoutChanges="true"
+            android:text="@string/loading"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+      
+      </LinearLayout >
+      
+      <LinearLayout
+          android:id="@+id/loading"
+          android:animateLayoutChanges="true"
+          android:visibility="gone"
+          android:background="@android:color/white"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:orientation="vertical" >
+        
+        <ImageView
+            android:id="@+id/iv_main_loading"
+            android:animateLayoutChanges="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/loading" />
+        
+        <TextView
+            android:id="@+id/tv_main_loading"
+            android:animateLayoutChanges="true"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="36dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/gotta_catch_em_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+      </LinearLayout >
+      
+      <LinearLayout
+          android:id="@+id/error"
+          android:animateLayoutChanges="true"
+          android:visibility="gone"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical" />
+    
+    </FrameLayout >
+  </android.support.v4.widget.SwipeRefreshLayout>
+</android.support.constraint.ConstraintLayout >

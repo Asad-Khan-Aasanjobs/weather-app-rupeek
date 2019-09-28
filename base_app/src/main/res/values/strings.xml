@@ -1,4 +1,6 @@
 <resources >
-  <string name="app_name" >Base App Template</string >
+  <string name="app_name" >Weather App Rupeek</string >
   <string name="hello_world" >Hello World</string >
+  <string name="title_activity_weather_list" >WeatherListActivity</string >
+  <string name="action_settings" >Settings</string >
 </resources >

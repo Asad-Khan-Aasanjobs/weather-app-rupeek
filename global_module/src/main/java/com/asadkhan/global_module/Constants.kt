@@ -1,4 +1,4 @@
-package com.asadkhan.global
+package com.asadkhan.global_module
 
 object Constants {
   private const val answer = 42

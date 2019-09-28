@@ -6,16 +6,16 @@ object Versions {
   const val kotlin = "1.3.21"
   
   // Build Config
-  const val minSDK = 16
+  const val minSDK = 21
   const val devSDK = 21
-  const val compileSDK = 28
-  const val targetSDK = 28
+  const val compileSDK = 26
+  const val targetSDK = 26
   
   // Gradle Plugins
   const val fabric = "1.27.1"
   const val googleServicesGms = "4.2.0"
   
-  const val buildTools = "28.0.3"
+  const val buildTools = "26.0.3"
   
   // Google Play APIs
   const val playServices = "15.0.1"

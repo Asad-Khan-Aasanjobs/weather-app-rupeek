@@ -23,23 +23,28 @@ android {
 
     defaultPublishConfig "debug"
 
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    //testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-    libraryVariants.all { variant ->
-      //      // List all properties
-      //      for (Object p : variant.properties) {
-      //        print("Property: $p\n")
-      //      }
-      def varName = variant.name
-      print("Assemble Type: $varName\n")
-      if (varName == "debug") {
-        variant.assemble.doLast { output ->
-          print("Copying module artifact\n")
-          rootProject.archiveArtifact("global_module")
-        }
-      }
-    }
+//    libraryVariants.all { variant ->
+//      //      // List all properties
+//      //      for (Object p : variant.properties) {
+//      //        print("Property: $p\n")
+//      //      }
+//      def varName = variant.name
+//      print("Assemble Type: $varName\n")
+//      if (varName.toLowerCase().contains("debug")) {
+//        variant.assemble.doLast { output ->
+//          print("Copying module artifact\n")
+//          rootProject.archiveArtifact("global_module")
+//        }
+//      }
+//    }
   }
+
+  androidExtensions {
+    experimental = true
+  }
+
   buildTypes {
     debug {
       minifyEnabled false
@@ -57,11 +62,80 @@ android {
     targetCompatibility JavaVersion.VERSION_1_8
   }
 }
+
+allprojects {
+  repositories {
+    google()
+    mavenCentral()
+    jcenter()
+    maven { url 'https://maven.google.com' }
+  }
+}
+
+
+//configurations {
+//  rootProject.ext.flavors.each { flavor, config ->
+//    print("BuildFlavor: ${flavor}Implementation\n")
+//    print("BuildFlavor: ${flavor}DebugImplementation\n")
+//    print("BuildFlavor: ${flavor}ReleaseImplementation\n")
+//    "$flavor" {
+//      "${flavor}Implementation"
+//      "${flavor}DebugImplementation"
+//      "${flavor}ReleaseImplementation"
+//    }
+//  }
+//}
+
+def rv = "2.5.0"
+def timber = "com.jakewharton.timber:timber"
+def glide = "com.github.bumptech.glide"
+def dagger = "com.google.dagger:dagger"
+def retrofit2 = "com.squareup.retrofit2"
+def fire = "com.google.firebase:firebase"
+def rx2 = "io.reactivex.rxjava2"
+def archx = "2.0.0"
+def roomx = "2.0.0"
+def paging = "1.0.1"
+def lifecycle = "androidx.lifecycle:lifecycle"
+def chuck = "com.readystatesoftware.chuck:library"
+def crashlytix = "com.crashlytics.sdk.android:crashlytics"
+def kotlin_jdk8 = "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
 dependencies {
   implementation fileTree(include: ["*.jar"], dir: "libs")
-  implementation Libs.kotlinStdLib
+  api Libs.kotlinStdLib
+  // https://mvnrepository.com/artifact/com.android.support/recyclerview-v7
+  implementation group: 'com.android.support', name: 'recyclerview-v7', version: '26.1.0'
+  // https://mvnrepository.com/artifact/com.android.support.constraint/constraint-layout
+  implementation group: 'com.android.support.constraint', name: 'constraint-layout', version: '1.1.3'
+
+
+  kapt "$dagger-compiler:2.23.1"
+  api "$dagger:2.23.1"
+  compileOnly "javax.annotation:jsr250-api:1.0"
+
+  api "$rx2:rxjava:2.2.9"
+  api "$rx2:rxandroid:2.1.1"
+//
+//  api "$lifecycle-extensions:$archx"
+//  api "$lifecycle-runtime:$archx"
+//  api "$lifecycle-reactivestreams:$archx"
+//  kapt "$lifecycle-compiler:$archx"
+
+  //retrofit(Network)
+  api "$retrofit2:retrofit:$rv"
+  api "$retrofit2:adapter-rxjava2:$rv"
+  api "$retrofit2:converter-gson:$rv"
+  api "com.squareup.okhttp3:logging-interceptor:3.13.1"
+
+  api "$timber:4.7.1"
+
+
+  api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1"
+
   testImplementation "junit:junit:4.12"
-  androidTestImplementation "androidx.test:runner:1.1.1"
-  androidTestImplementation "androidx.test.espresso:espresso-core:3.1.1"
+
+//  androidTestImplementation "androidx.test:runner:1.2.0"
+//  androidTestImplementation "androidx.test.espresso:espresso-core:3.2.0"
 }
 

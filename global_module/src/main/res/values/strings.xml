@@ -1,3 +1,13 @@
 <resources >
-  <string name="app_name" >global</string >
+  <string name="app_name" >Weather App Rupeek</string >
+  
+  <string name="gotta_catch_em_all" >Gotta Catch \'em All</string >
+  <string name="types" >Type</string >
+  <string name="search" >Search</string >
+  <string name="hello_world" >Hello World</string >
+  <string name="todo" >TODO</string >
+  <string name="loading" >Loading . . .</string >
+  <string name="type" >Type</string >
+  <string name="weight" >Weight</string >
+  <string name="height" >Height</string >
 </resources >
