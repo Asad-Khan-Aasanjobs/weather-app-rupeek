@@ -37,7 +37,7 @@ class DataModule() {
     private const val SHARED_PREFERENCE_NAME = "weather_app_preferences"
 
     @JvmStatic
-    var BASE_URL = "https://www.mocky.io/v2/"
+    var BASE_URL = "http://www.mocky.io/v2/"
 
     val FORMAT_ONE = "yyyy-MM-dd'T'HH:mm:ss"
 

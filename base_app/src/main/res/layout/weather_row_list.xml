@@ -74,7 +74,7 @@
           android:id="@+id/iv_rain"
           android:layout_width="24dp"
           android:layout_height="24dp"
-          tools:src="@drawable/ic_rain"
+          android:src="@drawable/ic_rain"
           android:contentDescription="@string/app_name" />
       
       <TextView
@@ -91,7 +91,7 @@
           android:layout_width="32dp"
           android:layout_height="24dp"
           android:layout_marginStart="18dp"
-          tools:src="@drawable/ic_wind"
+          android:src="@drawable/ic_wind"
           android:contentDescription="@string/app_name" />
       
       <TextView

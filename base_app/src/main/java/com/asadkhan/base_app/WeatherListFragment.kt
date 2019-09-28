@@ -68,6 +68,7 @@ class WeatherListFragment : Fragment() {
       .subscribe({
         it?.let { list ->
           adapter.appendAll(list.data, true)
+          srl_swipe_refresh.isRefreshing = false
         }
       }, {
         it.printStackTrace()
